@@ -1,4 +1,3 @@
-// src/Service.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -13,8 +12,8 @@ const Service = () => {
         const response = await axios.get('https://api.adviceslip.com/advice');
         setAdvice(response.data.slip.advice);
         setLoading(false);
-      } catch (err) {
-        setError('Não foi possível buscar o conselho.');
+      } catch (error) {
+        setError('Que pena, mas acho que não a conselhos para você =(');
         setLoading(false);
       }
     };
@@ -27,10 +26,13 @@ const Service = () => {
 
   return (
     <div>
-      <h1>Conselho do Dia</h1>
+    
       <p>{advice}</p>
+
+      
     </div>
   );
 };
 
 export default Service;
+
